@@ -18,23 +18,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Vertical kanji */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute left-7 top-1/2 -translate-y-1/2 z-10"
-        style={{
-          writingMode: "vertical-rl",
-          fontFamily: "'Share Tech Mono', monospace",
-          fontSize: "20px",
-          color: "rgba(79,195,247,0.35)",
-          letterSpacing: "8px",
-        }}
-      >
-        五 条 悟
-      </motion.div>
-
       {/* Section dots */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
         {[0, 1, 2, 3, 4].map((i) => (
@@ -50,8 +33,30 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Main grid */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-20 grid grid-cols-2 items-center gap-10">
+      {/* Outer flex: kanji on far left, then main content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex items-center" style={{ paddingLeft: "16px", paddingRight: "80px" }}>
+
+        {/* Vertical kanji — sits in its own space, never overlaps */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          style={{
+            writingMode: "vertical-rl",
+            fontFamily: "'Share Tech Mono', monospace",
+            fontSize: "20px",
+            color: "rgba(79,195,247,0.35)",
+            letterSpacing: "8px",
+            flexShrink: 0,
+            marginRight: "24px",
+            alignSelf: "center",
+          }}
+        >
+          五 条 悟
+        </motion.div>
+
+        {/* Main 2-col grid */}
+        <div className="flex-1 grid grid-cols-2 items-center gap-10">
         {/* LEFT */}
         <div className="flex flex-col gap-5">
           <motion.p
@@ -238,10 +243,11 @@ export default function Hero() {
             />
           </div>
         </motion.div>
-      </div>
+        </div>{/* end inner grid */}
+      </div>{/* end outer flex */}
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-20 flex flex-col items-center gap-2 z-10">
+      <div className="absolute bottom-8 flex flex-col items-center gap-2 z-10" style={{ left: "60px" }}>
         <div
           className="animate-scroll-line"
           style={{ width: 1, height: 48, background: "linear-gradient(180deg, #00d4ff, transparent)" }}
