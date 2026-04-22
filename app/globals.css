@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+  --blue: #4fc3f7;
+  --blue-bright: #00d4ff;
+  --purple: #7c3aed;
+  --purple-bright: #a855f7;
+  --bg: #02030a;
+  --bg2: #070b18;
+  --card-bg: rgba(10,15,35,0.85);
+  --border: rgba(79,195,247,0.18);
+  --border-active: rgba(79,195,247,0.6);
+  --text: #e2e8f0;
+  --text-dim: #64748b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+
+.clip-corner {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+.clip-corner-lg {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spin-reverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+@keyframes ring-pulse {
+  0%,100% { opacity: 0.5; box-shadow: 0 0 20px rgba(0,212,255,0.2); }
+  50% { opacity: 1; box-shadow: 0 0 50px rgba(0,212,255,0.5), inset 0 0 30px rgba(0,212,255,0.1); }
+}
+@keyframes dot-pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+@keyframes scroll-line {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+@keyframes travel {
+  0% { stroke-dashoffset: 600; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+.animate-spin-slow { animation: spin-slow 14s linear infinite; }
+.animate-spin-reverse { animation: spin-reverse 9s linear infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-ring-pulse { animation: ring-pulse 3s ease-in-out infinite; }
+.animate-dot-pulse { animation: dot-pulse 2s ease-in-out infinite; }
+.animate-scroll-line { animation: scroll-line 2s ease-in-out infinite; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
