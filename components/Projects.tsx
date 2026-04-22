@@ -19,7 +19,7 @@ export default function Projects() {
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 36 }}
         >
@@ -36,7 +36,7 @@ export default function Projects() {
             <motion.div
               key={p.name}
               initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
               className="clip-corner"
               style={{ background: "rgba(10,15,35,0.85)", border: "1px solid rgba(79,195,247,0.18)", cursor: "pointer", overflow: "hidden", transition: "transform 0.4s, box-shadow 0.4s, border-color 0.4s" }}

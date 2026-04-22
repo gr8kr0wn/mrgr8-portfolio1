@@ -46,7 +46,7 @@ export default function OnChain() {
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="flex items-center gap-3 mb-9"
         >
@@ -63,7 +63,7 @@ export default function OnChain() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
           {/* Wallet */}
           <motion.div
-            custom={0} variants={cardVariants} initial="hidden" animate={inView ? "visible" : "hidden"}
+            custom={0} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
             className="clip-corner"
             style={{ background: "rgba(10,15,35,0.85)", border: "1px solid rgba(79,195,247,0.5)", padding: 20, boxShadow: "0 0 25px rgba(79,195,247,0.12), inset 0 0 20px rgba(79,195,247,0.03)" }}
           >
@@ -85,7 +85,7 @@ export default function OnChain() {
 
           {/* ENS */}
           <motion.div
-            custom={1} variants={cardVariants} initial="hidden" animate={inView ? "visible" : "hidden"}
+            custom={1} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
             className="clip-corner"
             style={{ background: "rgba(10,15,35,0.85)", border: "1px solid rgba(79,195,247,0.18)", padding: 20 }}
           >
@@ -104,7 +104,7 @@ export default function OnChain() {
 
           {/* NFT Collection */}
           <motion.div
-            custom={2} variants={cardVariants} initial="hidden" animate={inView ? "visible" : "hidden"}
+            custom={2} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
             className="clip-corner"
             style={{ background: "rgba(10,15,35,0.85)", border: "1px solid rgba(79,195,247,0.18)", padding: 20 }}
           >
@@ -123,7 +123,7 @@ export default function OnChain() {
 
           {/* Activity */}
           <motion.div
-            custom={3} variants={cardVariants} initial="hidden" animate={inView ? "visible" : "hidden"}
+            custom={3} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
             className="clip-corner"
             style={{ background: "rgba(10,15,35,0.85)", border: "1px solid rgba(79,195,247,0.18)", padding: 20 }}
           >

@@ -90,7 +90,7 @@ export default function TechStack() {
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 48 }}
         >
@@ -130,7 +130,7 @@ export default function TechStack() {
             <motion.div
               key={node.id}
               initial={{ opacity: 0, scale: 0.5 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.2 + i * 0.08, duration: 0.5, ease: "backOut" }}
               style={{
                 position: "absolute",

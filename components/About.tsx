@@ -38,7 +38,7 @@ export default function About() {
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 48 }}
         >
@@ -51,7 +51,7 @@ export default function About() {
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
             style={{ position: "relative" }}
           >
@@ -72,7 +72,7 @@ export default function About() {
           {/* Quote + Bio */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <blockquote style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 22, fontWeight: 700, color: "#fff", lineHeight: 1.4, marginBottom: 20, paddingLeft: 20, position: "relative" }}>
@@ -120,7 +120,7 @@ export default function About() {
           {/* Stats */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.4, duration: 0.8 }}
             style={{ display: "flex", flexDirection: "column", gap: 28 }}
           >
